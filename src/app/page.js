@@ -6,11 +6,14 @@ import Footer from "../components/footer";
 export default function Page() {
   return (
     <div>
+    
+
       <Navbar />
       <EducationBanner />
       <SecondSection />
       <ThirdSection />
       <Footer />
+      
     </div>
   );
 }

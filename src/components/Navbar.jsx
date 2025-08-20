@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Search, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -14,7 +15,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,39 +30,31 @@ export default function Navbar() {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "px-0 py-0" : "px-4 py-4"
+        isScrolled ? "shadow-md" : ""
       }`}
     >
       <nav
         className={`transition-all duration-300 ${
-          isScrolled ? "max-w-full" : "mx-auto max-w-7xl"
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md border-b border-gray-200"
+            : "bg-transparent"
         }`}
       >
-        <div
-          className={`flex items-center justify-between px-6 py-3 shadow-lg transition-all duration-300 ${
-            isScrolled
-              ? "rounded-none bg-white/90 backdrop-blur-md border-b border-gray-200"
-              : "rounded-full bg-white"
-          }`}
-        >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500">
-              <svg
-                className="h-5 w-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">CSH</span>
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="rounded-full object-contain"
+              />
+              <span className="text-xl font-extrabold text-blue-800 tracking-tight">
+                Gavinath Infotech
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -71,17 +63,19 @@ export default function Navbar() {
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-orange-500 ${
-                    item.isActive ? "text-orange-400" : "text-gray-700"
+                  className={`flex items-center gap-1 text-sm font-medium transition-all ${
+                    item.isActive
+                      ? "text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
                   }`}
                 >
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
                 </Link>
 
-                {/* Dropdown (visible on hover) */}
+                {/* Dropdown */}
                 {item.name === "Courses" && item.hasDropdown && (
-                  <div className="absolute left-0 top-full hidden group-hover:block transition duration-200 delay-75">
+                  <div className="absolute left-0 top-full hidden w-48 rounded-xl bg-white p-4 shadow-lg group-hover:block">
                     <DropDown />
                   </div>
                 )}
@@ -97,15 +91,16 @@ export default function Navbar() {
 
             <Link
               href="/login"
-              className="hidden text-sm font-medium text-gray-700 hover:text-gray-900 lg:block"
+              className="hidden text-sm font-medium text-gray-700 hover:text-blue-600 lg:block"
             >
               Log In
             </Link>
 
-            <Button className="bg-orange-500 px-6 py-2 text-sm font-medium text-white hover:bg-orange-600">
+            <Button className="hidden bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 text-sm font-semibold text-white shadow-md hover:opacity-90 lg:block">
               Get Started
             </Button>
 
+            {/* Mobile Menu Toggle */}
             <button
               className="text-gray-600 hover:text-gray-900 lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -121,14 +116,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="mt-2 rounded-2xl bg-white p-4 shadow-lg lg:hidden">
+          <div className="animate-slideDown mt-2 rounded-2xl bg-white p-4 shadow-lg lg:hidden">
             <div className="space-y-4">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`flex w-full items-center justify-between text-left text-sm font-medium transition-colors hover:text-orange-500 ${
-                    item.isActive ? "text-orange-500" : "text-gray-700"
+                  className={`flex w-full items-center justify-between text-sm font-medium transition-colors ${
+                    item.isActive
+                      ? "text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
                   }`}
                 >
                   {item.name}
@@ -145,10 +142,13 @@ export default function Navbar() {
                 </button>
                 <Link
                   href="/login"
-                  className="w-full text-left text-sm font-medium text-gray-700"
+                  className="block w-full text-left text-sm font-medium text-gray-700 hover:text-blue-600"
                 >
                   Log In
                 </Link>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md hover:opacity-90">
+                  Get Started
+                </Button>
               </div>
             </div>
           </div>

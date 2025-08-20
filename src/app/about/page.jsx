@@ -1,5 +1,4 @@
 import AboutHero from "../../components/about/about-hero";
-import OurStory from "../../components/about/our-story";
 import WhyChooseUs from "../../components/about/why-choose-us";
 import LocationContact from "../../components/about/location-contact";
 import Footer from "../../components/footer";
@@ -20,7 +19,6 @@ export default function AboutPage() {
       </div>
 
       <AboutHero />
-      <OurStory />
       <WhyChooseUs />
       <LocationContact />
 

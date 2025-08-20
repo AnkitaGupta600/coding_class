@@ -1,85 +1,77 @@
-import { MapPin, Users, Award, BookOpen } from "lucide-react";
+"use client";
 
-export default function AboutHero() {
+import { Target, Lightbulb, Users, Code2 } from "lucide-react";
+
+export default function AboutSection() {
   return (
-    <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-orange-100 rounded-full opacity-50"></div>
-      <div className="absolute bottom-10 left-10 w-24 h-24 bg-orange-200 rounded-full opacity-30"></div>
+    <section className="bg-gradient-to-b from-purple-50 to-pink-50 py-4 px-6 md:px-16">
+      {/* Heading */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-6">
+          Learn. Code. Grow.
+        </h2>
+        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          At our coding classes, we simplify programming and make learning fun.  
+          From basics to real-world projects, we guide you step by step to build 
+          strong coding skills and prepare you for a bright career in tech.
+        </p>
+      </div>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-orange-600">
-                <MapPin className="w-5 h-5" />
-                <span className="font-semibold">Indore, Madhya Pradesh</span>
-              </div>
-
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                About
-                <span className="text-orange-500 relative">
-                  {" "}
-                  CodingSkillHub
-                  <div className="absolute bottom-2 left-0 w-full h-2 bg-orange-200 rounded-full -z-10"></div>
-                </span>
-              </h1>
-
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Empowering the next generation of developers in the heart of
-                India with world-class coding education and industry-relevant
-                skills.
-              </p>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Users className="w-8 h-8 text-orange-500" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">2000+</div>
-                <div className="text-sm text-gray-600">Students Trained</div>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <BookOpen className="w-8 h-8 text-orange-500" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">50+</div>
-                <div className="text-sm text-gray-600">Courses Offered</div>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Award className="w-8 h-8 text-orange-500" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">95%</div>
-                <div className="text-sm text-gray-600">Placement Rate</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-3xl p-8 transform rotate-3">
-              <img
-                src="/placeholder.svg?height=400&width=500"
-                alt="CodingSkillHub Classroom"
-                className="w-full h-80 object-cover rounded-2xl transform -rotate-3 shadow-2xl"
-              />
-            </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-lg p-4">
-              <div className="text-center">
-                <div className="text-lg font-bold text-orange-500">4.9★</div>
-                <div className="text-xs text-gray-600">Student Rating</div>
-              </div>
-            </div>
-          </div>
+      {/* Mission Vision Values */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+          <Target className="w-14 h-14 mx-auto text-purple-600 mb-4" />
+          <h3 className="text-2xl font-semibold text-purple-900 mb-3">Our Mission</h3>
+          <p className="text-gray-600">
+            To make coding easy and accessible for every learner while building 
+            confidence and problem-solving ability.
+          </p>
         </div>
+
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+          <Lightbulb className="w-14 h-14 mx-auto text-pink-500 mb-4" />
+          <h3 className="text-2xl font-semibold text-purple-900 mb-3">Our Vision</h3>
+          <p className="text-gray-600">
+            To create future-ready developers who can turn ideas into impactful solutions 
+            with their coding skills.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-2xl p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+          <Users className="w-14 h-14 mx-auto text-indigo-600 mb-4" />
+          <h3 className="text-2xl font-semibold text-purple-900 mb-3">Our Values</h3>
+          <p className="text-gray-600">
+            Consistency, curiosity, and collaboration — the three keys we follow 
+            to support every learner’s growth.
+          </p>
+        </div>
+      </div>
+
+      {/* Journey / Timeline */}
+      <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl shadow-lg p-10 mb-20">
+        <h3 className="text-3xl font-bold text-purple-900 mb-8 text-center">
+          Our Journey So Far
+        </h3>
+        <ul className="space-y-6 text-gray-800 text-lg">
+          <li>📘 Started with a small group of learners eager to code.</li>
+          <li>💡 Designed fun, practical projects to make concepts clear.</li>
+          <li>🤝 Built a supportive community of passionate students.</li>
+          <li>🚀 Helping learners prepare for interviews and real-world challenges.</li>
+        </ul>
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center">
+        <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+          Ready to Begin Your Coding Journey? 🚀
+        </h3>
+        <p className="text-lg text-gray-700 mb-8">
+          Join us today and take your first step towards becoming a confident 
+          programmer and building your dream career.
+        </p>
+        <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:scale-105 transition transform">
+          Enroll Now
+        </button>
       </div>
     </section>
   );
