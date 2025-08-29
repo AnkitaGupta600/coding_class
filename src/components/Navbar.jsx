@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Search, ChevronDown, Menu, X } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import DropDown from "../components/Navbar/dropDown";
@@ -43,16 +42,20 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="rounded-full object-contain"
-              />
-              <span className="text-xl font-extrabold text-blue-800 tracking-tight">
-                Gavinath Infotech
+            <Link
+              href="/"
+              className="flex items-center gap-3"
+              aria-label="Shiva Code Solution Home"
+            >
+              <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-blue-800 text-white">
+                <span className="text-[11px] font-black tracking-wide">
+                  SCS
+                </span>
+                <span className="absolute right-1.5 top-1.5 h-2 w-0.5 rounded-sm bg-green-500"></span>
+              </div>
+
+              <span className="text-xl font-extrabold tracking-tight text-blue-800">
+                Shiva Code Solution
               </span>
             </Link>
           </div>
@@ -73,44 +76,13 @@ export default function Navbar() {
                   {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
                 </Link>
 
-                {/* Dropdown */}
                 {item.name === "Courses" && item.hasDropdown && (
-                  <div className="absolute left-0 top-full hidden w-48 rounded-xl bg-white p-4 shadow-lg group-hover:block">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 top-full hidden group-hover:block">
                     <DropDown />
                   </div>
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-4">
-            <button className="hidden text-gray-600 hover:text-gray-900 lg:block">
-              <Search className="h-5 w-5" />
-            </button>
-
-            <Link
-              href="/login"
-              className="hidden text-sm font-medium text-gray-700 hover:text-blue-600 lg:block"
-            >
-              Log In
-            </Link>
-
-            <Button className="hidden bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 text-sm font-semibold text-white shadow-md hover:opacity-90 lg:block">
-              Get Started
-            </Button>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              className="text-gray-600 hover:text-gray-900 lg:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
           </div>
         </div>
 

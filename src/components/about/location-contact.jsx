@@ -22,8 +22,8 @@ export default function LocationContact() {
   }, []);
 
   const coordinates = {
-    lat: 22.750712726705963,
-    lng: 75.90000234355573,
+    lat: 22.754022544007956,
+    lng: 75.89385466243786,
   };
 
   const openInGoogleMaps = () => {
@@ -114,7 +114,9 @@ export default function LocationContact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Hours</h4>
-                    <p className="text-gray-600">Mon - Sat: 9:00 AM - 8:00 PM</p>
+                    <p className="text-gray-600">
+                      Mon - Sat: 9:00 AM - 8:00 PM
+                    </p>
                     <p className="text-gray-600">Sunday: 10:00 AM - 6:00 PM</p>
                   </div>
                 </div>
@@ -170,7 +172,7 @@ export default function LocationContact() {
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-purple-600 rounded-full animate-pulse"></div>
                   <span className="text-sm font-semibold text-gray-900">
-                    CodingSkillHub
+                    ShivaCodeSolution
                   </span>
                 </div>
                 <div className="text-xs text-gray-600 mt-1">

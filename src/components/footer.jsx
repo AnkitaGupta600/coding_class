@@ -1,5 +1,4 @@
 import {
-  CheckCircle,
   Mail,
   Phone,
   MapPin,
@@ -10,7 +9,6 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -22,35 +20,56 @@ export default function Footer() {
           <div className="space-y-5">
             <div className="flex items-center space-x-2">
               {/* Company Logo */}
-              <Image
-                src="/logo.png"   // <-- yaha apna logo file ka path do (public folder me rakho)
-                alt="Gavinath Infotech Logo"
-                width={40}
-                height={40}
-                className="rounded-full object-contain"
-              />
-              <span className="text-2xl font-bold text-white">
-                Gavinath Infotech
-              </span>
+              <Link
+                href="/"
+                className="flex items-center gap-3"
+                aria-label="Shiva Code Solution Home"
+              >
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-blue-800 text-white">
+                  <span className="text-[11px] font-black tracking-wide">
+                    SCS
+                  </span>
+                  <span className="absolute right-1.5 top-1.5 h-2 w-0.5 rounded-sm bg-green-500"></span>
+                </div>
+                <span className="text-2xl font-extrabold tracking-tight text-white">
+                  Shiva Code Solution
+                </span>
+              </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Unlock your potential with high-quality courses, hands-on projects, 
-              and expert mentors guiding you towards your dream career.
+              Unlock your potential with high-quality courses, hands-on
+              projects, and expert mentors guiding you towards your dream
+              career.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Facebook className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Twitter className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Instagram className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Linkedin className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+              >
                 <Youtube className="w-6 h-6" />
               </Link>
             </div>
@@ -60,16 +79,18 @@ export default function Footer() {
           <div className="space-y-5">
             <h3 className="text-xl font-bold text-white">Quick Links</h3>
             <ul className="space-y-3">
-              {["Home", "About Us", "Solutions", "Blog", "Contact"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-cyan-400 transition-colors text-sm font-medium"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Home", "About Us", "Solutions", "Blog", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      href="#"
+                      className="text-gray-400 hover:text-cyan-400 transition-colors text-sm font-medium"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -102,19 +123,39 @@ export default function Footer() {
             <div className="space-y-4 text-gray-400">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
-                <p className="text-sm">
-                  123 Knowledge Avenue,
-                  <br />
-                  Learning City, LC 12345
-                </p>
+                <div>
+                  <h3 className="font-semibold text-white">Office1 - Indore</h3>
+                  <p className="text-muted-foreground">
+                    Scheme No 54, near to Malhar Mega Mall
+                    <br />
+                    Vijay Nagar
+                    <br />
+                    Indore, Madhya Pradesh - 452010
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-white ">
+                    Office2 - Birsinghpur-Satna
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Near Bholenath Shiv Temple
+                    <br />
+                    Main-Market, Birsinghpur-Satna
+                    <br />
+                    Madhya Pradesh - 485226
+                  </p>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <p className="text-sm">+1 (555) 987-6543</p>
+                <p className="text-sm">+91 7440248190</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <p className="text-sm">support@gavinathinfotech.com</p>
+                <p className="text-sm">shivanshu2019gupta@gmail.com</p>
               </div>
             </div>
           </div>
@@ -126,9 +167,12 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-white mb-2">Stay Updated</h3>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Stay Updated
+              </h3>
               <p className="text-gray-400 text-sm">
-                Get the latest courses, career tips, and learning updates in your inbox.
+                Get the latest courses, career tips, and learning updates in
+                your inbox.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 w-full md:w-auto">
@@ -149,7 +193,10 @@ export default function Footer() {
       <div className="border-t border-gray-700 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Gavinath Infotech. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Shiva Code Solution. All rights
+              reserved.
+            </p>
             <p>Developed with ❤️ by Shivanshu Gupta</p>
           </div>
         </div>
