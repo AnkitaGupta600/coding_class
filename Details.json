@@ -1,0 +1,560 @@
+{
+  "institute": {
+    "name": "Coding Skill Hub",
+    "tagline": "Ready to Launch Your IT Career",
+    "about": "Short-term IT and software training programs focused on employable skills, internships, and job readiness."
+  },
+  "fees": {
+    "amount": 25000,
+    "currency": "INR",
+    "notes": "One-time fee"
+  },
+  "institute_details": {
+    "phones": ["+91 8989400470", "+91 9171145151"],
+    "address": {
+      "line1": "1st Floor, Celestial Arcade",
+      "landmark": "Radisson Hotel Service Road, Near Vijay Nagar HP Petrol Pump",
+      "area": "Vijay Nagar",
+      "city": "Indore",
+      "postal_code": "452010",
+      "country": "India",
+      "google_maps": "https://maps.app.goo.gl/zDdw68qrb9rh957k7"
+    },
+    "website": "https://www.codingskillhub.in/"
+  },
+  "career_support": {
+    "placement_skills": [
+      "Personality development",
+      "Soft skills",
+      "Communication skills"
+    ],
+    "resume_building": true,
+    "profile_building": {
+      "linkedin": true,
+      "github": true,
+      "stack_overflow": true,
+      "discord": true
+    }
+  },
+  "certifications": [
+    "Infosys Certificate",
+    "Training Certificate",
+    "Internship Certificate",
+    "Coding Competition Certificate"
+  ],
+  "engagement": {
+    "visit_institute": true,
+    "appointment_schedule": true,
+    "demo_schedule": true
+  },
+  "learning_model": {
+    "class_duration_hours": "1-2",
+    "delivery_mode": "In-person (with potential hybrid/online options if available)",
+    "projects": {
+      "live_projects_count": 10,
+      "hands_on_learning": true,
+      "daily_assignments": true,
+      "coding_competitions_participation": true
+    },
+    "extras": {
+      "freelancing_training": true,
+      "mock_interview": true,
+      "interview_preparation": true,
+      "expert_faculties": true,
+      "affordable_fees": true
+    }
+  },
+  "courses": [
+    {
+      "id": 1,
+      "name": "Full Stack Development",
+      "fees": {
+        "tuition_inr": 15000,
+        "placement_inr": 10000,
+        "total_inr": 25000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": [
+        {
+          "name": "Python Full Stack",
+          "stack": ["Python", "Django", "React.js", "MySQL"]
+        },
+        {
+          "name": "MERN Stack",
+          "stack": ["MongoDB", "Express.js", "React.js", "Node.js"]
+        },
+        {
+          "name": "MEAN Stack",
+          "stack": ["MongoDB", "Express.js", "Angular", "Node.js"]
+        },
+        {
+          "name": "Java Full Stack",
+          "stack": [
+            "Java",
+            "Spring Boot",
+            "Hibernate",
+            "React.js/Angular",
+            "MySQL"
+          ]
+        },
+        {
+          "name": "PHP Full Stack",
+          "stack": ["PHP", "Laravel", "React.js/Angular", "MySQL"]
+        }
+      ],
+      "outcomes": [
+        "Build end-to-end web applications",
+        "Understand REST APIs and databases",
+        "Deploy projects to cloud"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Web Development",
+      "fees": { "tuition_inr": 7000, "currency": "INR" },
+      "duration_months": { "min": 2, "max": 3 },
+      "tracks": [
+        {
+          "name": "Frontend Development",
+          "stack": ["HTML", "CSS", "JavaScript", "Bootstrap", "React.js"]
+        },
+        {
+          "name": "Backend Development",
+          "stack": ["Node.js", "Django", "PHP", "Laravel"]
+        },
+        {
+          "name": "WordPress Development",
+          "stack": ["WordPress", "Themes", "Plugins"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Blockchain & Web3",
+      "fees": {
+        "tuition_inr": 20000,
+        "placement_inr": 10000,
+        "total_inr": 30000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": [
+        {
+          "name": "Blockchain Development",
+          "stack": ["Solidity", "Ethereum", "Smart Contracts"]
+        },
+        {
+          "name": "Web3 & NFT Development",
+          "stack": ["Web3", "NFT Standards", "DApps"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Data Science & Machine Learning (With AI)",
+      "fees": {
+        "tuition_inr": 20000,
+        "placement_inr": 10000,
+        "total_inr": 30000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": [
+        "Data Science with Python",
+        "Machine Learning & AI",
+        "Deep Learning with TensorFlow & Keras",
+        "Business Analytics",
+        "Data Analytics"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Mobile App Development",
+      "fees": {
+        "tuition_inr": 20000,
+        "placement_inr": 10000,
+        "total_inr": 30000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": [
+        "Flutter Development",
+        "Android Development (Java/Kotlin)",
+        "iOS Development (Swift)",
+        "React Native Development"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cyber Security & Ethical Hacking",
+      "fees": {
+        "tuition_inr": 20000,
+        "placement_inr": 10000,
+        "total_inr": 30000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": [
+        "Ethical Hacking & Penetration Testing",
+        "Cyber Security Essentials",
+        "Bug Bounty"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "UI/UX Design",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 2, "max": 3 },
+      "tracks": ["Adobe XD", "Figma", "Sketch"]
+    },
+    {
+      "id": 8,
+      "name": "DevOps & Cloud Computing",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 4, "max": 5 },
+      "tracks": [
+        "AWS Cloud Computing",
+        "DevOps (Docker, Kubernetes, Jenkins, Git, CI/CD)"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Game Development",
+      "fees": {
+        "tuition_inr": 30000,
+        "placement_inr": 10000,
+        "total_inr": 40000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 6, "max": 8 },
+      "tracks": ["Unity Game Development", "Unreal Engine Game Development"]
+    },
+    {
+      "id": 10,
+      "name": "Artificial Intelligence (AI) & Automation",
+      "fees": {
+        "tuition_inr": 50000,
+        "placement_inr": 10000,
+        "total_inr": 60000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 10, "max": 12 },
+      "tracks": [
+        "AI Full Stack",
+        "Chatbot Development (OpenAI, LangChain)",
+        "RPA (Robotic Process Automation)"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Software Testing & QA",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 3, "max": 4 },
+      "tracks": [
+        "Manual Testing",
+        "Automation Testing (Selenium, Cypress, JUnit, PyTest)"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Language Classes",
+      "fees": { "tuition_inr": 15000, "currency": "INR" },
+      "duration_months": 12,
+      "tracks": ["German", "Spanish", "French", "English", "Japanese"]
+    },
+    {
+      "id": 13,
+      "name": "Digital Marketing & SEO",
+      "fees": {
+        "tuition_inr": 15000,
+        "placement_inr": 10000,
+        "total_inr": 25000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 5, "max": 6 },
+      "tracks": [
+        "Digital Marketing",
+        "SEO, SEM, and SMM",
+        "Google Ads & Facebook Ads"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Database Management",
+      "fees": { "tuition_inr": 50000, "currency": "INR" },
+      "duration_months": { "min": 2, "max": 3 },
+      "tracks": [
+        "SQL (MySQL, PostgreSQL, SQL Server)",
+        "NoSQL (MongoDB, Firebase)"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Internship & IT Experience Programs",
+      "fees": { "tuition_inr": 10000, "currency": "INR" },
+      "duration_months": { "min": 3, "max": 6 },
+      "tracks": [
+        "Live Project Internship",
+        "Job-Oriented Training with Experience Certificates"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Certifications & Career Support",
+      "fees": { "notes": "Depends on certification" },
+      "duration_months": { "min": 1, "max": 3 },
+      "tracks": [
+        "Industry Certifications (AWS, Google, Microsoft, etc.)",
+        "Mock Interviews & Resume Building"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Robotics",
+      "fees": {
+        "tuition_inr": 15000,
+        "placement_inr": 10000,
+        "total_inr": 25000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 5, "max": 6 },
+      "tracks": ["Advanced Embedded Systems", "IoT and Automation", "Robotics"]
+    },
+    {
+      "id": 18,
+      "name": "Graphics Design",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 4, "max": 5 },
+      "tracks": [
+        "2D Animation",
+        "Graphics Design",
+        "3D Animation",
+        "Video Editing Course",
+        "VFX Courses"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Salesforce Development",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 5, "max": 6 },
+      "tracks": [
+        "Salesforce Admin",
+        "Salesforce Developer",
+        "Salesforce Lightning",
+        "Salesforce Integration & Deployment",
+        "Hands-on Projects & Certification Preparation"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "CCNA (Cisco Certified Network Associate)",
+      "fees": {
+        "tuition_inr": 10000,
+        "placement_inr": 10000,
+        "total_inr": 20000,
+        "currency": "INR"
+      },
+      "duration_months": { "min": 4, "max": 5 },
+      "tracks": [
+        "Networking Basics",
+        "Routing and Switching",
+        "IP Connectivity & Services",
+        "Network Security Fundamentals",
+        "CCNA Certification Preparation"
+      ]
+    }
+  ],
+  "learning_path_by_stage": {
+    "first_year": {
+      "goals": [
+        "Master web fundamentals and version control",
+        "Start a portfolio with responsive projects"
+      ],
+      "recommended_technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Tailwind CSS",
+        "Git",
+        "GitHub",
+        "Figma",
+        "Adobe XD",
+        "WordPress (intro)"
+      ],
+      "suggested_courses": [
+        "Web Development",
+        "UI/UX Design",
+        "Language Classes (English)"
+      ],
+      "expected_outcomes": [
+        "Personal portfolio site",
+        "2–3 responsive pages",
+        "Active GitHub profile"
+      ]
+    },
+    "second_year": {
+      "goals": [
+        "Choose a full-stack path and learn databases",
+        "Understand testing fundamentals and participate in internships"
+      ],
+      "recommended_technologies": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "MongoDB",
+        "Django (optional)",
+        "PHP & Laravel (optional)",
+        "Manual Testing (basics)"
+      ],
+      "suggested_courses": [
+        "Full Stack Development",
+        "Software Testing & QA (intro)",
+        "Internship & IT Experience Programs"
+      ],
+      "expected_outcomes": [
+        "2–3 CRUD apps",
+        "DB schema basics",
+        "Live project exposure"
+      ]
+    },
+    "third_year": {
+      "goals": [
+        "Adopt cloud, containers, and CI/CD",
+        "Select mobile or advanced data as an elective"
+      ],
+      "recommended_technologies": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "CI/CD",
+        "Advanced React",
+        "Flutter/Android",
+        "SQL tuning",
+        "Selenium/Cypress"
+      ],
+      "suggested_courses": [
+        "DevOps & Cloud Computing",
+        "Mobile App Development",
+        "Database Management",
+        "Software Testing & QA (automation)"
+      ],
+      "expected_outcomes": [
+        "Cloud-deployed app",
+        "Automated pipeline",
+        "Mobile or advanced web app"
+      ]
+    },
+    "fourth_year": {
+      "goals": [
+        "Finalize specialization and prepare for placements",
+        "Earn certifications and complete a capstone"
+      ],
+      "recommended_technologies": [
+        "AI Full Stack",
+        "OpenAI & LangChain",
+        "RPA",
+        "Salesforce (Admin/Developer/Lightning)",
+        "Cyber Security tools (PenTest, Bug Bounty)",
+        "Unity/Unreal (optional)"
+      ],
+      "suggested_courses": [
+        "Artificial Intelligence (AI) & Automation",
+        "Salesforce Development",
+        "Cyber Security & Ethical Hacking",
+        "Game Development",
+        "Certifications & Career Support",
+        "Internship & IT Experience Programs"
+      ],
+      "expected_outcomes": [
+        "Capstone with real users",
+        "Certification attempt (AWS/Google/Microsoft/CCNA/Salesforce/Infosys)",
+        "Placement-ready profile"
+      ]
+    },
+    "college_passed_student": {
+      "goals": [
+        "Accelerated job alignment",
+        "Live-project credentials and interview readiness"
+      ],
+      "recommended_technologies": [
+        "Chosen Full Stack (MERN/MEAN/Python/Java/PHP)",
+        "AWS, Docker, Kubernetes, Jenkins, CI/CD",
+        "Selenium/Cypress",
+        "Data Analytics or AI (role-based)",
+        "Salesforce or CCNA"
+      ],
+      "suggested_courses": [
+        "Full Stack Development",
+        "DevOps & Cloud Computing",
+        "Software Testing & QA",
+        "Data Science & ML or AI & Automation",
+        "Salesforce Development or CCNA",
+        "Internship & IT Experience Programs",
+        "Certifications & Career Support"
+      ],
+      "expected_outcomes": [
+        "2–3 production-grade deployments",
+        "Certification-ready skills",
+        "Placement pipeline"
+      ]
+    },
+    "non_it_student": {
+      "goals": [
+        "Bridge into IT with structured fundamentals",
+        "Hands-on guided projects and soft-skills support"
+      ],
+      "recommended_technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js (basics)",
+        "Node.js & Express (fundamentals)",
+        "MySQL or MongoDB",
+        "Git & GitHub",
+        "Figma"
+      ],
+      "suggested_courses": [
+        "Web Development",
+        "Full Stack Development (MERN/Python beginner-friendly)",
+        "UI/UX Design",
+        "Internship & IT Experience Programs",
+        "Certifications & Career Support"
+      ],
+      "expected_outcomes": [
+        "3–4 portfolio projects",
+        "Internship letter",
+        "Job-ready resume & LinkedIn"
+      ]
+    }
+  }
+}
