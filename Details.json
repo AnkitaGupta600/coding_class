@@ -1,11 +1,11 @@
 {
   "institute": {
-    "name": "Coding Skill Hub",
+    "name": "Shiva Code Solution",
     "tagline": "Ready to Launch Your IT Career",
     "about": "Short-term IT and software training programs focused on employable skills, internships, and job readiness."
   },
   "fees": {
-    "amount": 25000,
+    "amount": 8000,
     "currency": "INR",
     "notes": "One-time fee"
   },

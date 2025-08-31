@@ -34,6 +34,7 @@ const ChatPopup = ({ onClose }) => {
 
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedSlot, setSelectedSlot] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -45,6 +46,7 @@ const ChatPopup = ({ onClose }) => {
   // when user selects type
   const handleUserTypeSelect = (type) => {
     setMessages((prev) => [...prev, { from: "user", text: type }]);
+
     if (type === "Student") {
       setMessages((prev) => [
         ...prev,
@@ -61,7 +63,12 @@ const ChatPopup = ({ onClose }) => {
           from: "bot",
           text: `✅ Thanks for sharing! We'll note you as a ${type}.`,
         },
+        {
+          from: "bot",
+          text: "Now tell me, which course are you interested in?",
+        },
       ]);
+      setShowCourseSearch(true);
     }
   };
 
@@ -129,6 +136,7 @@ const ChatPopup = ({ onClose }) => {
       setAwaitingTrackSelection(true);
     } else {
       setAwaitingUserDetails(true);
+      setSelectedCourse(course);
     }
   };
 
@@ -148,8 +156,8 @@ const ChatPopup = ({ onClose }) => {
     setAwaitingUserDetails(true);
   };
 
-  // submit full user details form
-  const handleUserDetailsSubmit = (e) => {
+  // submit full user details form (send to backend)
+  const handleUserDetailsSubmit = async (e) => {
     e.preventDefault();
     if (
       !userDetails.name ||
@@ -158,6 +166,21 @@ const ChatPopup = ({ onClose }) => {
       !userDetails.address
     )
       return;
+
+    try {
+      const res = await fetch("http://localhost:5000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userDetails),
+      });
+
+      const data = await res.json();
+      if (data.userId) {
+        setUserId(data.userId);
+      }
+    } catch (err) {
+      console.error("User API error:", err);
+    }
 
     setMessages((prev) => [
       ...prev,
@@ -172,12 +195,11 @@ const ChatPopup = ({ onClose }) => {
     setAwaitingUserDetails(false);
     setAwaitingMeeting(true);
     setUserInput("");
-    console.log("Collected user details:", userDetails);
     setUserDetails({ name: "", email: "", mobile: "", address: "" });
   };
 
-  // slot selection
-  const handleSlotSelect = (slot) => {
+  // slot selection (send inquiry to backend)
+  const handleSlotSelect = async (slot) => {
     setSelectedSlot(slot);
     setMessages((prev) => [
       ...prev,
@@ -187,6 +209,26 @@ const ChatPopup = ({ onClose }) => {
         text: `✅ Your meeting is scheduled at ${slot}. You'll receive confirmation shortly.`,
       },
     ]);
+
+    const inquiryData = {
+      userType: "Student", // you can enhance later
+      enrolledCourse: "", // track from earlier input
+      interestedCourse: selectedCourse ? selectedCourse.name : "",
+      track: "", // if selected
+      meetingSlot: slot,
+      userId: userId,
+    };
+
+    try {
+      await fetch("http://localhost:5000/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inquiryData),
+      });
+    } catch (err) {
+      console.error("Inquiry API error:", err);
+    }
+
     setAwaitingMeeting(false);
   };
 
@@ -196,13 +238,10 @@ const ChatPopup = ({ onClose }) => {
         {/* Header */}
         <div className="bg-cyan-500 text-white p-3 flex items-center rounded-t-xl">
           <div className="bg-cyan-500 text-white p-3 flex items-center gap-3 rounded-t-xl">
-            {/* Logo (same as Navbar) */}
             <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-blue-800 text-white">
               <span className="text-[11px] font-black tracking-wide">SCS</span>
               <span className="absolute right-1.5 top-1.5 h-2 w-0.5 rounded-sm bg-green-500"></span>
             </div>
-
-            {/* Title */}
             <div>
               <p className="font-semibold">Shiva Code Solution</p>
               <p className="text-xs opacity-80">Virtual Assistant</p>
@@ -266,98 +305,68 @@ const ChatPopup = ({ onClose }) => {
                   <h3 className="text-base font-semibold text-orange-600 mb-3">
                     Please Enter Your Details
                   </h3>
-
                   <form
                     className="grid grid-cols-2 gap-3"
                     onSubmit={handleUserDetailsSubmit}
                   >
-                    {/* Name */}
-                    <div className="flex flex-col">
-                      <label className="text-xs text-gray-600 mb-1">Name</label>
-                      <input
-                        type="text"
-                        placeholder="Name"
-                        value={userDetails.name}
-                        onChange={(e) =>
-                          setUserDetails((prev) => ({
-                            ...prev,
-                            name: e.target.value,
-                          }))
-                        }
-                        required
-                        className="px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-orange-400"
-                      />
-                    </div>
-
-                    {/* Email */}
-                    <div className="flex flex-col">
-                      <label className="text-xs text-gray-600 mb-1">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        value={userDetails.email}
-                        onChange={(e) =>
-                          setUserDetails((prev) => ({
-                            ...prev,
-                            email: e.target.value,
-                          }))
-                        }
-                        required
-                        className="px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-orange-400"
-                      />
-                    </div>
-
-                    {/* Mobile */}
-                    <div className="flex flex-col">
-                      <label className="text-xs text-gray-600 mb-1">
-                        Mobile
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Mobile"
-                        value={userDetails.mobile}
-                        onChange={(e) =>
-                          setUserDetails((prev) => ({
-                            ...prev,
-                            mobile: e.target.value,
-                          }))
-                        }
-                        required
-                        className="px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-orange-400"
-                      />
-                    </div>
-
-                    {/* Address */}
-                    <div className="flex flex-col">
-                      <label className="text-xs text-gray-600 mb-1">
-                        Address
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Address"
-                        value={userDetails.address}
-                        onChange={(e) =>
-                          setUserDetails((prev) => ({
-                            ...prev,
-                            address: e.target.value,
-                          }))
-                        }
-                        required
-                        className="px-2 py-1 border rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-orange-400"
-                      />
-                    </div>
-
-                    {/* Submit spans full width */}
-                    <div className="col-span-2">
-                      <button
-                        type="submit"
-                        className="w-full py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition"
-                      >
-                        Submit
-                      </button>
-                    </div>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      value={userDetails.name}
+                      onChange={(e) =>
+                        setUserDetails((prev) => ({
+                          ...prev,
+                          name: e.target.value,
+                        }))
+                      }
+                      required
+                      className="px-2 py-1 border rounded-md text-sm col-span-2"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      value={userDetails.email}
+                      onChange={(e) =>
+                        setUserDetails((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
+                      required
+                      className="px-2 py-1 border rounded-md text-sm col-span-2"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Mobile"
+                      value={userDetails.mobile}
+                      onChange={(e) =>
+                        setUserDetails((prev) => ({
+                          ...prev,
+                          mobile: e.target.value,
+                        }))
+                      }
+                      required
+                      className="px-2 py-1 border rounded-md text-sm col-span-2"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Address"
+                      value={userDetails.address}
+                      onChange={(e) =>
+                        setUserDetails((prev) => ({
+                          ...prev,
+                          address: e.target.value,
+                        }))
+                      }
+                      required
+                      className="px-2 py-1 border rounded-md text-sm col-span-2"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition col-span-2"
+                    >
+                      Submit
+                    </button>
                   </form>
                 </div>
               </div>
@@ -372,7 +381,6 @@ const ChatPopup = ({ onClose }) => {
                   <h3 className="text-base font-semibold text-orange-600 mb-3">
                     Schedule Your Meeting
                   </h3>
-
                   <div className="grid grid-cols-2 gap-3">
                     {["10:00 AM", "12:00 PM", "3:00 PM", "5:00 PM"].map(
                       (slot) => (
@@ -390,7 +398,6 @@ const ChatPopup = ({ onClose }) => {
                       )
                     )}
                   </div>
-
                   <p className="text-xs text-gray-500 mt-3">
                     * All meetings are held at our institute campus.
                   </p>
@@ -402,7 +409,6 @@ const ChatPopup = ({ onClose }) => {
 
         {/* Input Area */}
         <div className="p-3 border-t bg-white">
-          {/* Student enrolled course input */}
           {awaitingStudentCourse && (
             <div className="flex gap-2">
               <input
@@ -421,7 +427,6 @@ const ChatPopup = ({ onClose }) => {
             </div>
           )}
 
-          {/* Interested course search */}
           {showCourseSearch && (
             <div>
               <input
